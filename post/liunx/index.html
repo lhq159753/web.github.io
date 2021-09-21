@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>LIUNX | Gridea</title>
+<meta name="description" content="温故而知新">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://lhq159753.github.io/web.github.io//favicon.ico?v=1632211490875">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://lhq159753.github.io/web.github.io//styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://lhq159753.github.io/web.github.io/">Gridea</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="https://lhq159753.github.io/lhq123.github.io/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="https://lhq159753.github.io/lhq123.github.io/tags" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="https://lhq159753.github.io/lhq123.github.io/archives" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="https://lhq159753.github.io/lhq123.github.io/post/hello-gridea" class="menu">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>LIUNX</h1>
+            <p class="article-meta">
+              2021-09-20
+              
+            </p>
+            
+              <img src="https://lhq159753.github.io/web.github.io//post-images/liunx.jpg" alt="LIUNX">
+            
+            <div class="post-content">
+              <pre><code>这是一篇liunx学习手册的心得🦁
+
+
+这仅仅只是一个不如渗透的一个小开始
+</code></pre>
+<!--基础命令 -->
+<p>🐧ls  查看   ls -l查看权限                    lspci：查看网卡信息   lspci -vvv ：查看网卡驱动</p>
+<p>🐧 touch 创建文件                    ethtool -i eth0： 查看网卡驱动版本</p>
+<p>🐧 mkdir 创建目录  mkdir -p</p>
+<p>🐧 cd 进入文件或目录</p>
+<p>🐧 rm 删除</p>
+<p>🐧 cat 查看文件适合文件较少  cat -n显示行号</p>
+<p>🐧 more 查看文件适合较多 分页浏览</p>
+<p>🐧 less 查看文件可以搜索目标</p>
+<p>🐧 head  -n 查看目标文件所需要的几行</p>
+<p>🐧 mv 移动文件夹</p>
+<p>🐧 cp 复制文件 cp -p</p>
+<p>🐧 ln 生成链接文件 ln -s生成为软链接 类似于windows快捷方式</p>
+<p>🐧 useradd name 创建用户  userdel删除用户信息</p>
+<p>🐧 groupadd 创建组    groupdel删除</p>
+<p>🐧 权限更改 chmod  ugoa   +-=  rwx  文件或目录（touch  mkdir）</p>
+<p>🐧 r：读权限，用户可以读取文档的内容，如用cat，more查看</p>
+<p>🐧 w：写权限，用户可以编辑文档</p>
+<p>🐧 x：该目录具有可以被系统执行的权限</p>
+<p>🐧 x= 1 w= 2 r=4</p>
+<p>🐧  file（文件） r:cat/more/head/tail/less</p>
+<pre><code>                w:vim
+
+                 x:脚本 command
+</code></pre>
+<p>🐧 directory（目录） r:ls</p>
+<pre><code>                           w:touch/mkdir/rmdir/rm
+
+
+
+chown：改变文件所属用户  chown user file
+
+chgrp ：改变文件或目录所属组
+
+umask -S查看权限更改默认权限
+</code></pre>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://lhq159753.github.io/web.github.io/post/hello-gridea/">
+                <h3 class="post-title">
+                  Hello Gridea
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+          
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
+          
+
+          
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://lhq159753.github.io/web.github.io//images/avatar.png?v=1632211490875" class="no-responsive avatar">
+    <div class="text-muted">温故而知新</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://lhq159753.github.io/web.github.io/post/liunx/">LIUNX</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://lhq159753.github.io/web.github.io/post/hello-gridea/">Hello Gridea</a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://lhq159753.github.io/web.github.io/tag/XDVfw52Xj/" class="badge success">
+          Gridea
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://lhq159753.github.io/web.github.io//atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
