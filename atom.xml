@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lhq159753.github.io/web.github.io/</id>
     <title>seemH</title>
-    <updated>2021-09-22T11:44:00.792Z</updated>
+    <updated>2021-10-03T16:16:08.879Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lhq159753.github.io/web.github.io/"/>
     <link rel="self" href="https://lhq159753.github.io/web.github.io/atom.xml"/>
@@ -10,6 +10,150 @@
     <logo>https://lhq159753.github.io/web.github.io/images/avatar.png</logo>
     <icon>https://lhq159753.github.io/web.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, seemH</rights>
+    <entry>
+        <title type="html"><![CDATA[🐃Liunx相关命令]]></title>
+        <id>https://lhq159753.github.io/web.github.io/post/liunx-xiang-guan-ming-ling/</id>
+        <link href="https://lhq159753.github.io/web.github.io/post/liunx-xiang-guan-ming-ling/">
+        </link>
+        <updated>2021-09-27T09:27:52.000Z</updated>
+        <content type="html"><![CDATA[<p>🤡   ls #查看当前目录下的文件     ls -l查看相关文件权限<br>
+lspci -vvv #查看网卡驱动    lspci #查看网卡信息<br>
+touch #创建一个文件<br>
+mkdir #创建一个目录      mkdir -p 递归创建目录                              ⌚️<br>
+cd 进入一个目录<br>
+rm 删除文件<br>
+▶️<br>
+cat #适合查看较少的文件， cat -n显示行号<br>
+more 适合查看文件较多，可以分页浏览<br>
+less  #查看文件 可以搜索目标文件<br>
+less +参数 +文件 （  -b 设置缓冲区大小，  -e 当文件显示结束自动离开， -f 强制打开特殊文件，例 目录 二进制文件， -i 忽略搜索时的大小写 ， -N显示每行的行号  ）<br>
+head -n 查看目标为文件所需的几行<br>
+mv 移动文件<br>
+cp 复制文件 cp -p 递归的复制文件<br>
+in 生成连接文件  in -s 生成为软链接 类似于Windows的快捷方式<br>
+▶️<br>
+useradd +name 创建用户        userdel 删除用户信息<br>
+groupadd 创建组        groupdel  删除组<br>
+权限更改 chmod<br>
+（u 表示该文件的拥有者，g 表示与该文件的拥有者属于同一个群体(group)者，o 表示其他以外的人，a 表示这三者皆是。+ 表示增加权限、- 表示取消权限、= 表示唯一设定权限。r 表示可读取，w 表示可写入，x 表示可执行，X 表示只有当该文件是个子目录或者该文件已经被设定过为可执行。）                                               ☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️<br>
+chown 改变文件所属用户    # chown  +user +file<br>
+chgrp   改变文件或目录所属组<br>
+umask -S 查看权限更改默认权限<br>
+▶️</p>
+<ul>
+<li>
+<p>文件搜索命令<br>
+find    *号代表某个字符     ？问代表单个字符<br>
+find    /目标文件<br>
+find /-size  +文件大小 （在根目录下查找大于多少的文件）     +n 大于  -n 小于  n 等于<br>
+find /etc -cmin -5 （在etc 目录下查找五分钟被修改过的属性文件或者目录）<br>
+-amin 访问时间<br>
+-cmin文件属性<br>
+-mmin 文件内容<br>
+-a 两个条件同时满足<br>
+-o 两个条件满足任意一个即可<br>
+find /etc -size +163840 -a -size 204800   表示（查找大于80M小于100M 的文件）</p>
+<p>-type 根据文件类型查找<br>
+find /etc -name inittab -exec ls -l ｛｝\  （查找文件并显示详细信息）<br>
+-exec / -ok命令 ｛｝\：<br>
+根据用户所属组来查找文件 -user  -group</p>
+<p>locate   ：查找文件在资料库中的位置<br>
+updatedb  更新文件<br>
++i不区分大小写查找文件</p>
+<p>which 搜索命令所在的目录<br>
+whereis 搜索命令坐在的目录及帮助文档路径</p>
+<p>grep 在文件中搜索字串匹配的行<br>
+grep -i 忽略大小写查找文件<br>
+grep -v排除制定字串</p>
+<pre><code>▶️
+</code></pre>
+<p>获得帮助命令<br>
+man 获得帮助信息<br>
+whatis 直接查看配置命令的信息<br>
+apropos  查看配置文件的简短信息</p>
+<p>用户管理命令</p>
+<p>useradd +用户名   ：创建一个用户<br>
+passwd +用户名  ：创建新用户的密码<br>
+tty ：本地终端          pts：远程终端     who 查看用户登陆<br>
+w： 查看用户详细信息</p>
+<p>▶️<br>
+压缩解压命令</p>
+</li>
+</ul>
+<p>gzip ：压缩文件只能压缩文件<br>
+gunzip：解压缩  gzip -d   gunzip + 文件名.gz</p>
+<p>tar：压缩目录  tat -c：打包    tar -v 显示信息  tar -f：指定文件名   tar -z打包同时压缩<br>
+压缩后文件格式  ：tar.gz<br>
+tar -x 解包    tar -z解压缩  压缩后文件格式： gz</p>
+<p>zip：压缩文件或目录  zip 选项（-r）（压缩后文件名） （文件或目录）<br>
+unzip：解压缩<br>
+▶️</p>
+<pre><code>网络命令
+  
+write  给用户发消息   Ctrl+D保存结束
+write +用户名
+wall 发广播消息  wall +消息
+ping 测试网络连通性    ping +ip地址
+ping -c 3表示连接3次
+ifconfig：查看网卡信息 
+mail 查看发送邮件
+mail +用户名
+last：查看用户登录信息   lastlog 查看用户登录最后一次信息
+lastlog -u +用户名 只看某一用户
+tracetoute ：显示数据包到主机的路径
+traceroute +网站名
+netstart 显示网络相关信息
+netstart -t ：显示tcp协议    -u：udp协议     -l：监听
+-r显示路由     -n 显示ip地址和端口号
+netstart -tlun 查看本机监听的端口
+netstart -an 查看本机所有网络端口
+netstart -rn查看本机路由表
+
+
+
+  ▶️挂载命令
+  mount -t 文件系统   设备文件名   挂载点
+
+       ▶️ 关机命令
+shutdown
+init 系统运行级别 
+0 关机
+1 用户
+2 不完全多用户   不含NFS服务
+3 完全多用户
+4 未分配
+5 图形界面
+6 重启
+
+
+  ▶️  vim  编辑器
+  🤚快捷键方法
+  gg:行尾
+  x：删除光标所在处的字符
+  nx：删除光标所在处后n个字符
+  dd：删除光标所在行       ndd：删除n行
+  dG：删除光标所在行带文件末尾位置
+  D：删除光标所在处到行尾内容
+  n1  n2d：删除指定范围的行
+  行号+gg：快速移动到指定行
+  ctrl + f 向下翻页
+  ctrl +b 向上翻页
+  ctrl +d 向下翻半页
+  ctrl +u 向上翻半页
+</code></pre>
+<p>👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋👋</p>
+<pre><code>插入命令：aio
+复制和剪切： yy-p    和      dd-p
+替换：r/R    恢复  u
+</code></pre>
+<p>：s/aa/bb/g  表示将光标所在行出现的包含aa的字符全部替换为bb<br>
+：%s/aa/bb/g 将文档出现所有包含aa的字符中的aa替换为bb<br>
+：12，23s/aa/bb/g 将文档从12行中所出现的所有包含aa的字符替换为bb<br>
+：12，23s/^/#/ 将从12行到23行的行首加入#字符<br>
+：g/^\s*$/d 将所有不好喊字符（空格也不包含）的空行删除<br>
+：%s!\s*//.*!! 去掉所有的“//”注释</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[如何利用  ms17-010开始进行绳渗透测试]]></title>
         <id>https://lhq159753.github.io/web.github.io/post/ru-he-li-yong-ms17-010-kai-shi-jin-xing-sheng-shen-tou-ce-shi/</id>
