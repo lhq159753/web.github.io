@@ -7,7 +7,7 @@
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://lhq159753.github.io/web.github.io//favicon.ico?v=1633277762331">
+<link rel="shortcut icon" href="https://lhq159753.github.io/web.github.io//favicon.ico?v=1633344593887">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
@@ -91,7 +91,7 @@
             <p class="article-meta">
               2021-09-27
               
-                <a href="https://lhq159753.github.io/web.github.io/tag/0mwUkk-tH/" class="badge secondary">
+                <a href="https://lhq159753.github.io/web.github.io/tag/0mwUkk-tH/" class="badge warning">
                   liunx 运维
                 </a>
               
@@ -119,8 +119,9 @@ in 生成连接文件  in -s 生成为软链接 类似于Windows的快捷方式<
 useradd +name 创建用户        userdel 删除用户信息<br>
 groupadd 创建组        groupdel  删除组<br>
 权限更改 chmod<br>
-（u 表示该文件的拥有者，g 表示与该文件的拥有者属于同一个群体(group)者，o 表示其他以外的人，a 表示这三者皆是。+ 表示增加权限、- 表示取消权限、= 表示唯一设定权限。r 表示可读取，w 表示可写入，x 表示可执行，X 表示只有当该文件是个子目录或者该文件已经被设定过为可执行。）                                               ☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️<br>
-chown 改变文件所属用户    # chown  +user +file<br>
+（u 表示该文件的拥有者，g 表示与该文件的拥有者属于同一个群体(group)者，o 表示其他以外的人，a 表示这三者皆是。+ 表示增加权限、- 表示取消权限、= 表示唯一设定权限。r 表示可读取，w 表示可写入，x 表示可执行，X 表示只有当该文件是个子目录或者该文件已经被设定过为可执行。）<br>
+☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️</p>
+<p>👓    chown 改变文件所属用户    # chown  +user +file<br>
 chgrp   改变文件或目录所属组<br>
 umask -S 查看权限更改默认权限<br>
 ▶️</p>
@@ -236,6 +237,95 @@ init 系统运行级别
 ：12，23s/^/#/ 将从12行到23行的行首加入#字符<br>
 ：g/^\s*$/d 将所有不好喊字符（空格也不包含）的空行删除<br>
 ：%s!\s*//.*!! 去掉所有的“//”注释</p>
+<p>👓 yum 在线管理<br>
+yum list  查询克用软件包列表<br>
+安装：yum -y install +包名<br>
+卸载:  yum -y remove +包名<br>
+yum grouplist 列出所有可用的软件组列表<br>
+yum groupinstall 列出组名：安装指定转件组<br>
+yum groupremove 软件组名：卸载指定软件组</p>
+<p>👓 权限管理<br>
+setfacl 选项+文件名<br>
+-m 设定acl权限<br>
+-x 删除指定的acl权限<br>
+-b 删除所有权限<br>
+-d 指定默认acl权限<br>
+-k 删除默认acl权限<br>
+-R 递归设定acl权限<br>
+👓 设定setuid的方法<br>
+4代表 SUID<br>
+chmod 4755 +文件名<br>
+chmod u+s+文件名<br>
+取消setUID<br>
+chmod +755 文件名</p>
+<pre><code>文件系统属性  chattr 权限
++：增加权限
+-：删除权限
++：等于某权限
+i：如果对文件设置  i   属性，不允许对文件进行删除，改名，也不能对添加和修改数据；如果对目录设定  i 权限 只能修改目录下文件的数据 不允许建立和删除文件。
+
+a：对文件设置 a 属性，那么只能在文件中增加数据，但不能删除也不能修改数据；如果对目录设定 a权限，那么只能修改目录下文件的数据，但不允许建立和删除文件。
+例子：chattr +i 文件/目录
+
+
+查看文件系统属性：
+lsattr  -a 显示所有文件和目录       
+lasttr -d 若目标是目录 列出目录本身属性，而不是子文件
+
+
+sudo权限
+sudu操作对象是系统命令
+
+
+👓文件系统查看命令
+
+df：+选项+挂载点
+-a 显示所有文件系统信息
+-h 使用习惯单位显示容量  如KB MB GB
+-T 显示文件系统类型
+-m 以MB为单位显示容量
+-k 以KB为单位显示容量
+
+
+👓统计目录或文件大小
+du：+选项+文件或目录
+-a显示每个子文件的磁盘占用量
+-h 使用习惯单位显示磁盘占用量 如KB MB GB
+-s 统计占用量而不是列出子目录和子文件的占用量
+
+
+👓文件系统修复命令
+fsck ：+选项+分区设备文件名
+-a 不现实用户提示  自动修复文件系统
+-y 自动修复  一些文件系统只支持 -y参数
+
+
+
+👓挂载命令
+mount -l查询系统中已经挂载好的设备
+mount -a 依据配置文件 /etc/fstab的内容 自动挂载
+mount -t 文件系统加入文件类型来指定挂载的类型
+mount -o remount ，rw/给予系统读写权限
+挂载u盘
+fdisk -l查看u盘设备文件名
+
+
+
+💨查看系统中所有的进程
+ps aux 查看系统中所有进程，
+ps -le  查看系统中所有进程，
+
+💨 查看系统健康状态
+
+top +参数
+参数：
+d 秒数：指定top命令每隔几秒更新。默认为3秒
+？或者n  显示交互模式的帮助
+P  以CPU使用率排序，默认就是此项
+M  以内存的使用率排序
+N 以PID排序
+q 退出top
+</code></pre>
 
             </div>
           </article>
@@ -267,7 +357,7 @@ init 系统运行级别
 
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
-    <img src="https://lhq159753.github.io/web.github.io//images/avatar.png?v=1633277762331" class="no-responsive avatar">
+    <img src="https://lhq159753.github.io/web.github.io//images/avatar.png?v=1633344593887" class="no-responsive avatar">
     <div class="text-muted">温故而知新</div>
     <div class="social-container">
       
@@ -315,11 +405,11 @@ init 系统运行级别
     </div>
     <div class="row">
       
-        <a href="https://lhq159753.github.io/web.github.io/tag/0mwUkk-tH/" class="badge success">
+        <a href="https://lhq159753.github.io/web.github.io/tag/0mwUkk-tH/" class="badge warning">
           liunx 运维
         </a>
       
-        <a href="https://lhq159753.github.io/web.github.io/tag/aEz4gYwfn/" class="badge secondary">
+        <a href="https://lhq159753.github.io/web.github.io/tag/aEz4gYwfn/" class="badge warning">
           漏洞利用
         </a>
       
