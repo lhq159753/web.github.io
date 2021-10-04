@@ -138,6 +138,10 @@ nav ul.inline li a {
 }
 
       .paper {
+        background: #fffff;
+      }
+    
+      .navbar {
         background: #212529;
       }
     
