@@ -145,3 +145,55 @@ nav ul.inline li a {
         background: #212529;
       }
     
+      .friends-img.mr-2.lazy.loaded:hover{
+transform:rotate(360deg);
+}
+ 
+.comment-avatar:hover{
+transform:rotate(360deg);
+}
+ 
+.sidebar-comment-avatar.mr-1:hover{
+transform:rotate(360deg);
+}
+ 
+.friends-img.mr-2.lazy.loaded,.comment-avatar,.sidebar-comment-avatar.mr-1 {
+    border-radius: 50%;
+    animation: light 4s ease-in-out infinite;
+    transition: all 0.5s;
+}
+ 
+@keyframes light {
+    0% {
+        box-shadow: 0 0 4px #ff1354;
+    }
+ 
+    25% {
+    box-shadow: 0 0 16px #1ebbff;
+    }
+ 
+    50% {
+    box-shadow: 0 0 4px #0ed39f;
+    }
+ 
+    75% {
+    box-shadow: 0 0 16px #4fe7f4;
+    }
+ 
+    100% {
+    box-shadow: 0 0 4px #f35444;
+    }
+}
+img.lazy.loaded{
+    border-radius: 15px;
+    box-shadow: darkgrey 0px 0px 5px 5px;
+.post-ctx,.post-comment.mt-4,.sidebar-box {
+    background-clip: border-box;
+    border-radius: 15px;
+    box-shadow: -2px 8px 17px 0 rgb(157 167 255 / 36%), 0 6px 20px 0 rgb(255 255 255 / 19%);
+}
+ 
+.sidebar-banner{
+    border-radius: 20px 20px 0px 0px;
+}
+    
