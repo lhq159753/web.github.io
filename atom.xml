@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lhq159753.github.io/web.github.io/</id>
     <title>seemH</title>
-    <updated>2021-10-04T11:15:39.499Z</updated>
+    <updated>2021-10-07T08:35:56.829Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lhq159753.github.io/web.github.io/"/>
     <link rel="self" href="https://lhq159753.github.io/web.github.io/atom.xml"/>
@@ -10,6 +10,88 @@
     <logo>https://lhq159753.github.io/web.github.io/images/avatar.png</logo>
     <icon>https://lhq159753.github.io/web.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, seemH</rights>
+    <entry>
+        <title type="html"><![CDATA[正则表达式]]></title>
+        <id>https://lhq159753.github.io/web.github.io/post/zheng-ze-biao-da-shi/</id>
+        <link href="https://lhq159753.github.io/web.github.io/post/zheng-ze-biao-da-shi/">
+        </link>
+        <updated>2021-10-05T07:18:52.000Z</updated>
+        <content type="html"><![CDATA[<p>📙📙📙                          🕛</p>
+<p>正则表达式用来在文件中匹配符合条件的字符串，正则是包含匹配。</p>
+<p>在liunx中一些命令可以支持正则表达式<br>
+通配符用来匹配符合条件的文件名，通配符是完全匹配。<br>
+ls、find、cp这些命令不支持正则表达式，所以只能自己用shell自己的通配符来进行匹配<br>
+📃</p>
+<p><strong>元字符</strong>                                 ** 作用**<br>
+*                      |  前一个字符匹配0次或任意多次                    🕐</p>
+<pre><code>   .                       | 匹配除了换行字符外任意一个字符
+
+ ^                       | 匹配行首，例：^hello会匹配以hello开头的行
+
+   $                      | $ 匹配行尾，例：hello$匹配以hello结尾的行
+
+   [ ]                     |匹配括号中指定的任意一个字符，只匹配一个字符
+                              例：[aoeiu]匹配任意一个元音字母，[0-9]匹配任意一个  数字                                                                       🕑
+
+   [^]                   |匹配除括号中的字符以外的任意一个字符。
+                            例：[^0-9]匹配任意一位非数字字符 🕝
+
+   \                      |转义符 用于取消讲特殊符号的含义取消  🕒
+</code></pre>
+<p>{n}                     |表示其前面的字符恰好出现几次。                                          例子：[0-9]\｛4\｝匹配4个数字   [1][3-8][0-9]{9}匹配手机电话号码</p>
+<p>{n,}                      |表示其前面的字符出现不小于n次<br>
+例：[0-9]{2,} 表示两位及以上的数字</p>
+<p>{n,m}                | 表示其前面的字符至少出现了n次，最多出现m次<br>
+例：    [a-z]{6,8} 匹配6到8位的小写字母       🕓</p>
+<p>\cx	          匹配由x指明的控制字符。例如， \cM 匹配一个 Control-M 或回车符。x 的值必须为 A-Z 或 a-z 之一。否则，将 c 视为一个原义的 'c' 字符。</p>
+<p>\f	           匹配一个换页符。等价于 \x0c 和 \cL。</p>
+<p>\n	           匹配一个换行符。等价于 \x0a 和 \cJ。</p>
+<p>\r	            匹配一个回车符。等价于 \x0d 和 \cM。               🕔</p>
+<p>\s	            匹配任何空白字符，包括空格、制表符、换页符等等。等价于 [ \f\n\r\t\v]。注意 Unicode 正则表达式会匹配全角空格符。</p>
+<p>\S	           匹配任何非空白字符。等价于 [^ \f\n\r\t\v]。</p>
+<p>\t	            匹配一个制表符。等价于 \x09 和 \cI<br>
+。<br>
+\v           	匹配一个垂直制表符。等价于 \x0b 和 \cK。                  🕕</p>
+<ul>
+<li>匹配前面的子表达式一次或多次。要匹配 + 字符，请使用 +。</li>
+</ul>
+<p>?	匹配前面的子表达式零次或一次，或指明一个非贪婪限定符。要匹配 ? 字符，请使用 ?。</p>
+<p>\b	匹配一个单词边界，即字与空格间的位置。                 🕖<br>
+\B	非单词边界匹配。</p>
+<p>\cx	<br>
+匹配由 x 指明的控制字符。例如， \cM 匹配一个 Control-M 或回车符。x 的值必须为 A-Z 或 a-z 之一。否则，将 c 视为一个原义的 'c' 字符。</p>
+<p>\d	匹配一个数字字符。等价于 [0-9]。         🕘</p>
+<p>\D	<br>
+匹配一个非数字字符。等价于 [^0-9]。</p>
+<p>\f	<br>
+匹配一个换页符。等价于 \x0c 和 \cL。</p>
+<p>\n	<br>
+匹配一个换行符。等价于 \x0a 和 \cJ。            🕙</p>
+<p>\r	<br>
+匹配一个回车符。等价于 \x0d 和 \cM。</p>
+<p>\s	<br>
+匹配任何空白字符，包括空格、制表符、换页符等等。等价于 [ \f\n\r\t\v]。</p>
+<p>\S	匹配任何非空白字符。等价于 [^ \f\n\r\t\v]。</p>
+<p>\t	匹配一个制表符。等价于 \x09 和 \cI。</p>
+<p>\v	匹配一个垂直制表符。等价于 \x0b 和 \cK。         🕜</p>
+<p>\w	匹配字母、数字、下划线。等价于'[A-Za-z0-9_]'。</p>
+<p>\W	匹配非字母、数字、下划线。等价于 '[^A-Za-z0-9_]'。</p>
+<p>\xn	匹配 n，其中 n 为十六进制转义值。十六进制转义值必须为确定的两个数字长。例如，'\x41' 匹配 &quot;A&quot;。'\x041' 则等价于 '\x04' &amp; &quot;1&quot;。正则表达式中可以使用 ASCII 编码。</p>
+<p>\num	匹配 num，其中 num 是一个正整数。对所获取的匹配的引用。例如，'(.)\1' 匹配两个连续的相同字符。</p>
+<p>\n	标识一个八进制转义值或一个向后引用。如果 \n 之前至少 n 个获取的子表达式，则 n 为向后引用。否则，如果 n 为八进制数字 (0-7)，则 n 为一个八进制转义值。   🕞</p>
+<p>\nm	标识一个八进制转义值或一个向后引用。如果 \nm 之前至少有 nm 个获得子表达式，则 nm 为向后引用。如果 \nm 之前至少有 n 个获取，则 n 为一个后跟文字 m 的向后引用。如果前面的条件都不满足，若 n 和 m 均为八进制数字 (0-7)，则 \nm 将匹配八进制转义值 nm。</p>
+<p>\nml	如果 n 为八进制数字 (0-3)，且 m 和 l 均为八进制数字 (0-7)，则匹配八进制转义值 nml。<br>
+🕚</p>
+<p>正则表达式的优先级别<br>
+优先级别由上到下<br>
+1️⃣  \	转义符</p>
+<p>2️⃣   (), (?😃, (?=), []	圆括号和方括号</p>
+<p>3️⃣   *, +, ?, {n}, {n,}, {n,m}	限定符</p>
+<p>4️⃣  ^, $, \任何元字符、任何字符	定位点和序列（即：位置和顺序）</p>
+<p>5️⃣  |	替换，&quot;或&quot;操作<br>
+字符具有高于替换运算符的优先级，使得&quot;m|food&quot;匹配&quot;m&quot;或&quot;food&quot;。若要匹配&quot;mood&quot;或&quot;food&quot;，请使用括号创建子表达式，从而产生&quot;(m|f)ood&quot;。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[🐃Liunx相关命令]]></title>
         <id>https://lhq159753.github.io/web.github.io/post/liunx-xiang-guan-ming-ling/</id>
@@ -245,7 +327,7 @@ q 退出top
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[如何利用  ms17-010开始进行绳渗透测试]]></title>
+        <title type="html"><![CDATA[如何利用  ms17-010开始进行渗透测试]]></title>
         <id>https://lhq159753.github.io/web.github.io/post/ru-he-li-yong-ms17-010-kai-shi-jin-xing-sheng-shen-tou-ce-shi/</id>
         <link href="https://lhq159753.github.io/web.github.io/post/ru-he-li-yong-ms17-010-kai-shi-jin-xing-sheng-shen-tou-ce-shi/">
         </link>
