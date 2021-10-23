@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lhq159753.github.io/web.github.io/</id>
     <title>seemH</title>
-    <updated>2021-10-07T14:00:51.825Z</updated>
+    <updated>2021-10-23T08:42:28.392Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lhq159753.github.io/web.github.io/"/>
     <link rel="self" href="https://lhq159753.github.io/web.github.io/atom.xml"/>
@@ -10,6 +10,75 @@
     <logo>https://lhq159753.github.io/web.github.io/images/avatar.png</logo>
     <icon>https://lhq159753.github.io/web.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, seemH</rights>
+    <entry>
+        <title type="html"><![CDATA[计算机网络]]></title>
+        <id>https://lhq159753.github.io/web.github.io/post/ji-suan-ji-wang-luo/</id>
+        <link href="https://lhq159753.github.io/web.github.io/post/ji-suan-ji-wang-luo/">
+        </link>
+        <updated>2021-10-21T14:36:32.000Z</updated>
+        <content type="html"><![CDATA[<p>🐧<br>
+<strong>计算机网络是由一根通信介质将不同位置的且相互独立的计算机连接起来，并实现资源共享与数据通信</strong></p>
+<p>计算机网络拓扑结构<br>
+<strong>（1）总线型</strong><br>
+<img src="https://lhq159753.github.io/web.github.io//post-images/1634872838598.png" alt="" loading="lazy"><br>
+由由一根同轴电缆连接，当线路出问题时候，会导致整个网络是去通信。</p>
+<p><strong>（2）环型</strong><br>
+<img src="https://lhq159753.github.io/web.github.io//post-images/1634872919934.png" alt="" loading="lazy"></p>
+<pre><code>由站点和连接点形成一个闭合环，连接操作也简单方便，但是一个节点故障会引起全网故障，排查比较困难
+</code></pre>
+<p><strong>（3）树型</strong><br>
+<img src="https://lhq159753.github.io/web.github.io//post-images/1634873351761.png" alt="" loading="lazy"></p>
+<pre><code>树形结构易于拓展，且容易排查故障点，但是对于根节点的压力比较大若出现故障，会引起全网不能正常工作
+</code></pre>
+<p><strong>（4）网型</strong><br>
+<img src="https://lhq159753.github.io/web.github.io//post-images/1634873559371.png" alt="" loading="lazy"><br>
+该类型的拓扑应用我们生活中很多，同时能保障网络的效率，但是网络构建的话比较复杂且成本也相对较高</p>
+<p>根据地理位置分为三大网络<br>
+局域网（LAN）：  一个公司或者家庭<br>
+城域网（MAN）：一个地区，城市，<br>
+广域网（WAN）:   一个国家</p>
+<pre><code>**网络的OSI七层结构**
+</code></pre>
+<p>7️⃣<strong>应用层 <strong>：为用户提供一个应用的接口，同时也为用户直接提供各种网络服务。<br>
+⏫<br>
+6️⃣</strong>表示层</strong>：用于应用层的数据的编码和转换和加密。<br>
+⏫<br>
+5️⃣<strong>会话层</strong>：用于建立，管理和终止表示层实体之间的通信会话，类似找房子的中介<br>
+⏫<br>
+4️⃣<strong>传输层</strong>：建立，管理和维护为上层协议提供端到端的可靠和数据透明的传输服务(端口号)TCP UDP<br>
+在这一层作用<br>
+⏫<br>
+3️⃣<strong>网络层</strong>：通过IP地址来寻找目标主机来建立连接，同时选择合适的路由和交换节点（IP层）按照          给的地址传送给目的端的传输层<br>
+⏫<br>
+2️⃣<strong>数据链路层</strong>：把比特流组合成数据帧，在这一层使用（MAC地址）来访问介质，且进行差错检测<br>
+⏫<br>
+1️⃣<strong>物理层</strong>：通过物理常见的物理介质来传输比特流。</p>
+<p>**    TCP/IP参考模型与OSI七层对应关系**</p>
+<figure data-type="image" tabindex="1"><img src="https://lhq159753.github.io/web.github.io//post-images/1634896690821.png" alt="" loading="lazy"></figure>
+<p><strong>常见的网络设备</strong></p>
+<p>交换机:<br>
+<img src="https://lhq159753.github.io/web.github.io//post-images/1634896813472.png" alt="" loading="lazy"></p>
+<p>以太网交换机了解每一端口相连设备的MAC地址，并将地址同相应的端口映射起来存放在交换机缓存中的MAC地址表中交换机就以下操作<br>
+转发/过滤：当一个数据帧的目的地址在MAC地址表中有映射时，它被转发到连接目的节点的端口而不是所有端口（如该数据帧为广播/组播帧则转发至所有端口）<br>
+消除回路：当交换机包括一个冗余回路时，以太网交换机通过生成树协议避免回路的产生，同时允许存在后备路径。<br>
+在OSI七层中交换机属于OSI第二层即数据链路层设备。它根据MAC地址寻址，通过站表选择路由，站表的建立和维护由交换机自动进行</p>
+<p>路由器：<br>
+<img src="https://lhq159753.github.io/web.github.io//post-images/1634897153168.png" alt="" loading="lazy"></p>
+<pre><code>路由器属于OSI第三层即网络层设备，它根据IP地址进行寻址，通过路由表路由协议产生
+</code></pre>
+<p>路由器的主要任务是把通信引导到目的地网络，然后到达特定的节点站地址。后一个功能是通过网络地址分解完成的。例如，把网络地址部分的分配指定成网络、子网和区域的一组节点，其余的用来指明子网中的特别站。分层寻址允许路由器对有很多个节站的网络存储导址信息。</p>
+<p><strong>传输介质：</strong><br>
+现在传输介质有双绞线，和光纤</p>
+<p><strong>网络协议</strong><br>
+计算机网络中还有很多协议，首先要了解网络协议的三个要素</p>
+<p>网络协议三要素：<br>
+⛔️语义。语义是解释控制信息每个部分的意义。它规定了需要发出何种控制信息，以及完成的动作与做出什么样的响应。<br>
+⛔️ 语法。语法是用户数据与控制信息的结构与格式，以及数据出现的顺序。<br>
+⛔️ 时序。时序是对事件发生顺序的详细说明。（也可称为“同步”）。<br>
+更深入了解可以去大佬了解一波<br>
+https://blog.csdn.net/qq_23864697/article/details/89015659</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[正则表达式]]></title>
         <id>https://lhq159753.github.io/web.github.io/post/zheng-ze-biao-da-shi/</id>
