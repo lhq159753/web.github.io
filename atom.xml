@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lhq159753.github.io/web.github.io/</id>
     <title>seemH</title>
-    <updated>2021-10-29T12:39:48.174Z</updated>
+    <updated>2021-10-31T12:31:38.333Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lhq159753.github.io/web.github.io/"/>
     <link rel="self" href="https://lhq159753.github.io/web.github.io/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>https://lhq159753.github.io/web.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, seemH</rights>
     <entry>
-        <title type="html"><![CDATA[shell脚本常用命令]]></title>
+        <title type="html"><![CDATA[shell脚本常用命令及语法]]></title>
         <id>https://lhq159753.github.io/web.github.io/post/shell-jiao-ben-chang-yong-ming-ling/</id>
         <link href="https://lhq159753.github.io/web.github.io/post/shell-jiao-ben-chang-yong-ming-ling/">
         </link>
@@ -93,7 +93,7 @@ echo &quot; a&gt;b&quot;<br>
 else<br>
 echo &quot;a&lt;b&quot;<br>
 fi</p>
-<p>文件比较与检查<br>
+<p>test判断命令<br>
 -d检查文件是否存在且为目录<br>
 -e 检查文件是否存在<br>
 -f 检查文件是否存在且为文件<br>
@@ -104,7 +104,8 @@ fi</p>
 -O 检查文件是否存在且被当前用户拥有<br>
 -G 检查文件是否存在且默认组为当前用户组<br>
 file1-nt file2 检查文件1是否比文件2新<br>
-file1 -ot file2 检查文件1是否比文件2旧</p>
+file1 -ot file2 检查文件1是否比文件2旧<br>
+例如：<img src="https://lhq159753.github.io/web.github.io//post-images/1635591686197.png" alt="" loading="lazy"></p>
 <p>字符串比较运算</p>
 <pre><code>==等于
 ！=不等于
@@ -115,6 +116,66 @@ file1 -ot file2 检查文件1是否比文件2旧</p>
 与运算     &amp;&amp;   两个条件中 一假为假<br>
 或运算    ||    一真为真<br>
 非运算   ！   只有一个条件  非真为假  非假为真</p>
+<p>单if 语句<br>
+if  [ 条件 ]    条件为真时候执行<br>
+then<br>
+代码块<br>
+fi    结束</p>
+<p>if .......else 语句<br>
+if [ 条件代码块 ]  如果条件为真<br>
+then<br>
+代码块     条件为真    执行代码块1<br>
+else<br>
+代码块    条件为假    执行代码块2<br>
+fi     结束<br>
+例子：<img src="https://lhq159753.github.io/web.github.io//post-images/1635594416502.png" alt="" loading="lazy"></p>
+<p>if嵌套式</p>
+<p>if [ 条件代码块 ]<br>
+then<br>
+if   [ 条件代码块1]<br>
+then<br>
+代码块2<br>
+else<br>
+代码块3<br>
+fi</p>
+<p>if语句与 shell运算</p>
+<p>字符串之间的判断<br>
+-z 是否为空字符串<br>
+-n 是否为非空字符串</p>
+<pre><code>多重条件判断
+
+&amp;&amp; 与判断 一个条件为假 则为假
+||    或判断  一个条件为真则为真
+！非运算     
+</code></pre>
+<p>例子 ：<img src="https://lhq159753.github.io/web.github.io//post-images/1635595779268.png" alt="" loading="lazy"></p>
+<p><strong>for 循环</strong><br>
+for循环为条件循环</p>
+<p>for i in 语法<br>
+for var in  value1 value 2      （var 变量） （value  数值）<br>
+then<br>
+代码块<br>
+doen    结束</p>
+<p>#如果使用命令赋值 则需要用到 ``号<br>
+for var in <code>seq 1 9</code><br>
+then<br>
+echo &quot;$var&quot;<br>
+done<br>
+#如果赋值是一个字符串的话 需要用 \ 来转义字符串<br>
+for var in this\ is\ my\ write's\ shell<br>
+then<br>
+echo “word : $var”                          (())双小括号可以用来运算<br>
+done</p>
+<p>#####################################################################3</p>
+<p>c式 for 循环<br>
+for (( i=1；i&lt;10；i++))      提示：(i++) = ( i =i+1)<br>
+do<br>
+echo $i<br>
+done</p>
+<p><strong>循环控制语句</strong><br>
+sleep N 脚本执行到该步休眠N秒</p>
+<p>continue 跳出循环中的某次循环</p>
+<p>break 跳出循环继续执行后续的code</p>
 ]]></content>
     </entry>
     <entry>
