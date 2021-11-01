@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lhq159753.github.io/web.github.io/</id>
     <title>seemH</title>
-    <updated>2021-10-31T12:31:38.333Z</updated>
+    <updated>2021-11-01T03:04:09.650Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lhq159753.github.io/web.github.io/"/>
     <link rel="self" href="https://lhq159753.github.io/web.github.io/atom.xml"/>
@@ -153,20 +153,21 @@ fi</p>
 for循环为条件循环</p>
 <p>for i in 语法<br>
 for var in  value1 value 2      （var 变量） （value  数值）<br>
-then<br>
+do<br>
 代码块<br>
 doen    结束</p>
 <p>#如果使用命令赋值 则需要用到 ``号<br>
 for var in <code>seq 1 9</code><br>
-then<br>
+do<br>
 echo &quot;$var&quot;<br>
 done<br>
 #如果赋值是一个字符串的话 需要用 \ 来转义字符串<br>
 for var in this\ is\ my\ write's\ shell<br>
-then<br>
+do<br>
 echo “word : $var”                          (())双小括号可以用来运算<br>
-done</p>
-<p>#####################################################################3</p>
+done<br>
+例子：<img src="https://lhq159753.github.io/web.github.io//post-images/1635735817383.png" alt="" loading="lazy"><br>
+#####################################################################3</p>
 <p>c式 for 循环<br>
 for (( i=1；i&lt;10；i++))      提示：(i++) = ( i =i+1)<br>
 do<br>

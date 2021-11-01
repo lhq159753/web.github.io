@@ -260,7 +260,7 @@ $ ：这个符号是用来表示变量的，例如 A=1  在这里我们就定义
                         src='https://lhq159753.github.io/web.github.io//media/images/music.png' alt="音乐播放器" class="musicbtn"></i></a>
         </div>
         <div class="avatar-border">
-            <img src="https://lhq159753.github.io/web.github.io//images/avatar.png?v=1635683289052" class="avatar">
+            <img src="https://lhq159753.github.io/web.github.io//images/avatar.png?v=1635735845106" class="avatar">
         </div>
         <div class="sitename">seemH</div>
         <span class="description" data-text='["温故而知新"]'>&nbsp;</span>
@@ -1115,20 +1115,21 @@ fi</p>
 for循环为条件循环</p>
 <p>for i in 语法<br>
 for var in  value1 value 2      （var 变量） （value  数值）<br>
-then<br>
+do<br>
 代码块<br>
 doen    结束</p>
 <p>#如果使用命令赋值 则需要用到 ``号<br>
 for var in <code>seq 1 9</code><br>
-then<br>
+do<br>
 echo &quot;$var&quot;<br>
 done<br>
 #如果赋值是一个字符串的话 需要用 \ 来转义字符串<br>
 for var in this\ is\ my\ write's\ shell<br>
-then<br>
+do<br>
 echo “word : $var”                          (())双小括号可以用来运算<br>
-done</p>
-<p>#####################################################################3</p>
+done<br>
+例子：<img src="https://lhq159753.github.io/web.github.io//post-images/1635735817383.png" alt="" loading="lazy"><br>
+#####################################################################3</p>
 <p>c式 for 循环<br>
 for (( i=1；i&lt;10；i++))      提示：(i++) = ( i =i+1)<br>
 do<br>
