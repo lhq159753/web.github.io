@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lhq159753.github.io/web.github.io/</id>
     <title>seemH</title>
-    <updated>2021-11-01T03:04:09.650Z</updated>
+    <updated>2021-11-04T01:48:28.384Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lhq159753.github.io/web.github.io/"/>
     <link rel="self" href="https://lhq159753.github.io/web.github.io/atom.xml"/>
@@ -177,6 +177,34 @@ done</p>
 sleep N 脚本执行到该步休眠N秒</p>
 <p>continue 跳出循环中的某次循环</p>
 <p>break 跳出循环继续执行后续的code</p>
+<p>while循环  当不知道循环多少次数时候用while</p>
+<p>while  [  条件代码块 ]    条件必须为真才会执行 条件为假时候则终止</p>
+<p>do</p>
+<pre><code>            代码块
+</code></pre>
+<p>done</p>
+<p>while 嵌套式子<br>
+1）可以嵌套  if  for  whlie<br>
+2）循环控制  sleep   break   continue</p>
+<p>unity 循环语法  和while 语法相反</p>
+<p>unity [ 条件代码块 ] 条件为假才会执行，条件为真则终止<br>
+do<br>
+代码块</p>
+<p>done</p>
+<p>case 语法  根据不同的条件执行不同的代码块</p>
+<p>case   变量 in<br>
+条件1）<br>
+执行代码块<br>
+;;<br>
+条件2）<br>
+执行代码块<br>
+;;<br>
+条件n）<br>
+执行代码块<br>
+;;<br>
+esac</p>
+<p>常用内置参数<br>
+<img src="https://lhq159753.github.io/web.github.io//post-images/1635990387002.png" alt="" loading="lazy"></p>
 ]]></content>
     </entry>
     <entry>
